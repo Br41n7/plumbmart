@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f3f6fb;
+  --foreground: #0f172a;
+  --navy: #071a2e;
+  --navy-soft: #12345c;
+  --blue: #1a63d4;
+  --blue-soft: #dfeeff;
+  --muted: #475569;
+  --border: rgba(15, 23, 42, 0.08);
+  --success: #0f766e;
+  --success-soft: #dff7f4;
 }
 
 @theme inline {
@@ -12,15 +20,45 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(1200px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.section-shell {
+  @apply rounded-[2rem] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.08)];
+}
+
+.soft-card {
+  @apply rounded-2xl border border-slate-200 bg-slate-50;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
 }
